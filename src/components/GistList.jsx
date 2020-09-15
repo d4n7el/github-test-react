@@ -30,7 +30,7 @@ const TargetGist = () => {
             )}
             {data.map(({url, id, owner, created_at, description }) => {
                 console.log(data)
-                return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description}/>
+                return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description} />
             })}
         </div>
     )

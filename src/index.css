@@ -37,3 +37,35 @@ div.container {
 .font-2{
     font-size: 2em;
 }
+.font-1{
+    font-size: 1em;
+}
+
+.min-width-3{
+    min-width: 10em;
+}
+
+.Top-1{
+    margin-top: 1em;
+}
+
+div.title{
+    background-color: #005959 !important;
+    color: white !important;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    padding-top: .7em;
+    padding-bottom: .4em;
+}
+
+.vistaArchivo{
+    color: #005959;
+}
+
+.btn-enlace-blue{
+    color: #4048C9;
+}
+
+.btn-enlace-green{
+    color: #5AA350;
+}

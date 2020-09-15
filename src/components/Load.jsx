@@ -6,7 +6,7 @@ const Load = ({message}) => {
             <div className="spinner-border text-primary " role="status">
             
             </div>
-    <span className="text-muted left-2">{ message }</span>
+            <span className="text-muted left-2">{ message }</span>
         </div>
     )
 }
