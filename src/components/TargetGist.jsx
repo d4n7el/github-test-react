@@ -3,7 +3,6 @@ import { getGist } from  '../utilidades/gist'
 import Load from  './Load'
 import Target from  './Target'
 
-
 const TargetGist = () => {
     
     const [status, setStatus] = useState(0);
@@ -29,8 +28,9 @@ const TargetGist = () => {
             { status === 0 && (
                <Load message = "Estamos preprando la Información" />
             )}
-            {data.map(({url, id}) => {
-                return <Target  key={id} />
+            {data.map(({url, id, owner, created_at, description }) => {
+                console.log(data)
+                return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description}/>
             })}
         </div>
     )

@@ -1,18 +1,30 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const Target = () => {
+
+const Target = ({ avatar, created_at, description, id, login }) => {
+    console.log(description)
     return (
-        <div>
+        <div className="col-6">
             <div className="card cardGist mb-3">
+                <div className="top-right-absolute d-flex justify-content-end">
+                    <Link  to="/"><FontAwesomeIcon icon="eye" /></Link>
+                </div>
                 <div className="row no-gutters">
                     <div className="col-md-4">
-                        <img src="..." className="card-img" alt="..." />
+                        <img src={avatar} className="card-img" alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                            <h5 className="card-title">{ login || "*Anonymous*"}</h5>
+                            { description !== null && (
+                                <p className="card-text text-muted">{description.substring(0,70)}</p>
+                            )}
+                            { description === "" && (
+                                <p className="card-text text-muted">{"Sin Asignar descripción"}</p>
+                            )}
+                            <p className="card-text"><small className="text-muted">{created_at}</small></p>
                         </div>
                     </div>
                 </div>

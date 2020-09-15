@@ -26,6 +26,14 @@ div.container {
     margin-left: 2em;
 }
 
-.cardGist{
-    max-width: 540px
+.top-right-absolute{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: .5em;
+    z-index: 2;
+}
+
+.font-2{
+    font-size: 2em;
 }
