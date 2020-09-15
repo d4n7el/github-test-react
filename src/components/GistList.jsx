@@ -24,7 +24,12 @@ const TargetGist = () => {
     }, [] )
  
     return (
-        <div className="targets">
+        <div className="targets row">
+
+            <div className="col-12 text-center top-1 title container-shadow-one" >
+                <h4>Listado de Gist</h4>
+            </div>
+
             { status === 0 && (
                <Load message = "Estamos preprando la Información" />
             )}
