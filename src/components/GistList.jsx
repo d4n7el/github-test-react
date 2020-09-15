@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { getGist } from  '../utilidades/gist'
-import Load from  './Load'
 import Target from  './Target'
+import Error from  './Error'
 
 const TargetGist = () => {
     
     const [status, setStatus] = useState(0);
     const [data, setData] = useState([]);
+    const [statusText, setStatusText] = useState("Estamos cargando la Información");
 
     useEffect (() => {
 
@@ -14,6 +15,7 @@ const TargetGist = () => {
             const dataGist = await getGist();
             setStatus(dataGist.status);
             setData(dataGist.data)
+            setStatusText(dataGist.statusText)
         }
 
         getDataList();
@@ -26,17 +28,8 @@ const TargetGist = () => {
                 <h4>Listado de Gists</h4>
             </div>
 
-            { status ===  0 && (
-               <Load message = "Estamos preprando la Información" />
-            )}
-            { status ===  404 && (
-               <Load message = "Se presento un error al realizar la solictud, verifique su conexion." />
-            )}
-
-            { status ===  400 && (
-               <Load message = "Se presento un error al realizar la solictud, verifique su conexion." />
-            )}
-
+            <Error status={status} statusText={statusText}/>
+        
             { status >= 200 && status <= 205 && (
                 data.map(({url, id, owner, created_at, description }) => {
                     return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description} />

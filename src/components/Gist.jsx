@@ -5,12 +5,15 @@ import { getGistId } from '../utilidades/gist';
 import Load from  './Load'
 import GistInfo from  './GistInfo'
 import FilesView from  './FilesView'
+import Error from  './Error'
 
 const Gist = () => {
+
     const { id } = useParams()
     const [status, setStatus] = useState(0);
     const [data, setData] = useState(null);
     const [files, setFiles]= useState({});
+    const [statusText, setStatusText] = useState("Estamos cargando la Información");
     
     useEffect (() => {
 
@@ -19,6 +22,7 @@ const Gist = () => {
             setStatus(dataGist.status)
             setData(dataGist.data)
             setFiles(dataGist.data.files)
+            setStatusText(dataGist.statusText)
         }
 
         getData();
@@ -26,16 +30,8 @@ const Gist = () => {
 
     return (
         <div className="col-12">
-            { status ===  0 && (
-               <Load message = "Estamos preprando la Información" />
-            )}
-            { status ===  404 && (
-               <Load message = "Se presento un error al realizar la solictud, verifique su conexion." />
-            )}
-
-            { status ===  400 && (
-               <Load message = "Se presento un error al realizar la solictud, verifique su conexion." />
-            )}
+           
+           <Error status={status} statusText={statusText}/>
             
             { status >=  200 && status <= 205 && data != null && (
                 <GistInfo files={data.files} git_pull_url={data.git_pull_url} id={data.id} owner={data.owner} created_at={data.created_at} login={data.owner.login} description={data.description} />
