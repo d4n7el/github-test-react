@@ -11,13 +11,9 @@ const TargetGist = () => {
     useEffect (() => {
 
         const getDataList = async () => {
-            try{
-                const dataGist = await getGist();
-                setStatus(dataGist.status);
-                setData(dataGist.data)
-            }catch (err) {
-               console.log("No carga");
-            }
+            const dataGist = await getGist();
+            setStatus(dataGist.status);
+            setData(dataGist.data)
         }
 
         getDataList();
@@ -27,16 +23,25 @@ const TargetGist = () => {
         <div className="targets row">
 
             <div className="col-12 text-center top-1 title container-shadow-one" >
-                <h4>Listado de Gist</h4>
+                <h4>Listado de Gists</h4>
             </div>
 
-            { status === 0 && (
+            { status ===  0 && (
                <Load message = "Estamos preprando la Información" />
             )}
-            {data.map(({url, id, owner, created_at, description }) => {
-                console.log(data)
-                return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description} />
-            })}
+            { status ===  404 && (
+               <Load message = "Se presento un error al realizar la solictud, verifique su conexion." />
+            )}
+
+            { status ===  400 && (
+               <Load message = "Se presento un error al realizar la solictud, verifique su conexion." />
+            )}
+
+            { status >= 200 && status <= 205 && (
+                data.map(({url, id, owner, created_at, description }) => {
+                    return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description} />
+                })
+            )}
         </div>
     )
 }
