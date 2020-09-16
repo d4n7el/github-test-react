@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheckSquare, faCoffee, faEye } from '@fortawesome/free-solid-svg-icons'
@@ -14,7 +14,7 @@ library.add(faCheckSquare, faCoffee, faEye)
 const App = () => {
    
     return (
-        <Router>
+        <HashRouter basename='/'>
             <div >
                 <Navbar />
                 <div className = "container container-shadow-one ">
@@ -23,7 +23,7 @@ const App = () => {
                     <Route path = "/gists/:id" exact component = { Gist }  />
                 </div>
             </div>
-        </Router>
+        </HashRouter>
     )
 }
 
