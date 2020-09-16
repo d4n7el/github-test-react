@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 
 const Target = ({ avatar, created_at, description, id, login }) => {
@@ -31,6 +32,15 @@ const Target = ({ avatar, created_at, description, id, login }) => {
             </div>
         </div>
     )
+}
+
+Target.proptype = {
+    data: PropTypes.object.isrequired,
+    login: PropTypes.string.isrequired
+}
+
+Target.defaultProps = {
+    login: "*Anonymous*"
 }
 
 export default Target

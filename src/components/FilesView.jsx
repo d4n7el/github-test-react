@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const FilesView = ({ data, login }) => {
     const {  filename, raw_url  } = data;
@@ -14,6 +15,15 @@ const FilesView = ({ data, login }) => {
             </div>
         </div>
     )
+}
+
+FilesView.proptype = {
+    data: PropTypes.object.isrequired,
+    login: PropTypes.string.isrequired
+}
+
+FilesView.defaultProps = {
+    login: "*Anonymous*"
 }
 
 export default FilesView

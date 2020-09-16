@@ -5,23 +5,24 @@ import Error from  './Error'
 import Button from  './ButtonPag'
 
 const TargetGist = () => {
-    
-    const nextPage = () => {
-        var newPage = page + 1
-        setPage(newPage)
-    }
-
-    const previousPage = () => {
-        if(page > 0){
-            var newPage = page - 1
-            setPage(newPage)
-        }
-    }
-
     const [status, setStatus] = useState(0);
     const [data, setData] = useState([]);
     const [statusText, setStatusText] = useState("Estamos cargando la Información");
     const [page, setPage] = useState(1);
+
+    const nextPage = () => {
+        setStatus(0);
+        setStatusText()
+        setPage(page + 1)
+    }
+
+    const previousPage = () => {
+        if(page > 0){
+            setStatus(0);
+            setStatusText()
+            setPage(page - 1)
+        }
+    }
 
     useEffect (() => {
         const getDataList = async () => {

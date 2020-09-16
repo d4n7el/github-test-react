@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
-const GistInfo = ({ owner, created_at ,login,description ,id, git_pull_url, files }) => {
+const GistInfo = ({ owner, created_at ,login,description ,id, git_pull_url }) => {
+    const { avatar_url } = owner;
     return (
         <div className="row">
             <div className="col-12">
                 <div className="row">
                     <div className="col-12 col-sm-3">
-                        <img className="container-shadow-one card-img-top"  src={owner.avatar_url} width="50" alt="..." />
+                        <img className="container-shadow-one card-img-top"  src={avatar_url} width="50" alt="..." />
                     </div>
                     <div className="col-12 col-sm-9 d-flex align-items-center">
                         <div className="row">
@@ -54,6 +56,19 @@ const GistInfo = ({ owner, created_at ,login,description ,id, git_pull_url, file
             </div>
         </div>
     )
+}
+
+GistInfo.proptype = {
+    owner: PropTypes.object.isrequired,
+    created_at: PropTypes.string.isrequired,
+    login: PropTypes.string.isrequired,
+    description: PropTypes.string.isrequired,
+    id: PropTypes.string.isrequired,
+    git_pull_url: PropTypes.string.isrequired
+}
+
+GistInfo.defaultProps = {
+    login: "*Anonymous*"
 }
 
 export default GistInfo

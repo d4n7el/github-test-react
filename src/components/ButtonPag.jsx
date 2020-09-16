@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({text, type, clickHandler}) => {
+const ButtonPage = ({text, type, clickHandler}) => {
     return (
     <button className={type} onClick= { clickHandler.bind(this,text) }>
         <span>{text}</span>
@@ -9,12 +9,15 @@ const Button = ({text, type, clickHandler}) => {
     )
 }
 
-Button.propTypes = {
-    text: PropTypes.string.isRequired
+ButtonPage.propTypes = {
+    text: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    clickHandler: PropTypes.func.isRequired
 }
 
-Button.defaultProps = {
-    text: PropTypes.string.isRequired
+ButtonPage.defaultProps = {
+    text: "Sin Asignar texto",
+    type: "btn"
 }
 
-export default Button
+export default ButtonPage
