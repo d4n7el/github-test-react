@@ -49,6 +49,10 @@ div.container {
     margin-top: 1em;
 }
 
+.bottom-1{
+    margin-bottom: 1em;
+}
+
 div.title{
     background-color: #005959 !important;
     color: white !important;
@@ -68,4 +72,14 @@ div.title{
 
 .btn-enlace-green{
     color: #5AA350;
+}
+
+span.numberPage{
+    width: 8em;
+    text-align: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: white;
+    color: #005959;
+    border: 1px solid #005959 !important;
 }

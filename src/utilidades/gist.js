@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-const getGist = async (page = 2) => {
+const getGist = async (page = 2, per_page = 20) => {
     
     var dataRetorno = {
         error: true,
@@ -10,7 +10,7 @@ const getGist = async (page = 2) => {
     };
 
     try{
-        const data = await Axios.get(`//api.github.com/gists/public?page=${page}`);
+        const data = await Axios.get(`//api.github.com/gists?page=${page}&per_page=${per_page}`);
         dataRetorno.error = (data.status >= 200 && data.status <= 205) ? false : true;
             
         dataRetorno.data = data.data;

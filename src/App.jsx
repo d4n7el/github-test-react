@@ -19,6 +19,7 @@ const App = () => {
             <div >
                 <Layout />
                 <div className = "container container-shadow-one ">
+                    <Route path = "/" exact component = { TargetGist } />
                     <Route path = "/gists" exact component = { TargetGist } />
                     <Route path = "/gists/:id" exact component = { Gist }  />
                 </div>
