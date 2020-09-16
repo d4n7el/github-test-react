@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useParams } from "react-router-dom";
 import { getGistId } from '../utilidades/gist';
-import Load from  './Load'
 import GistInfo from  './GistInfo'
 import FilesView from  './FilesView'
 import Error from  './Error'

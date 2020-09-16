@@ -1,11 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Target = ({ avatar, created_at, description, id, login }) => {
     return (
-        <div className="col-6">
+        <div className="col-12 col-sm-6">
             <div className="card cardGist mb-3">
                 <div className="top-right-absolute d-flex justify-content-end">
                     <Link to={`/gists/${id}`}><FontAwesomeIcon icon="eye" /></Link>

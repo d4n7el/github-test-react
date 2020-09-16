@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FilesView = ({ data, login }) => {
-    const {  filename, raw_url, language, type  } = data;
+    const {  filename, raw_url  } = data;
     return (
         <div className="vistaArchivo col-12 Top-1">
             <div className="row">

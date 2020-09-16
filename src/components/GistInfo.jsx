@@ -1,16 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import Load from  './Load'
 
 const GistInfo = ({ owner, created_at ,login,description ,id, git_pull_url, files }) => {
     return (
         <div className="row">
             <div className="col-12">
                 <div className="row">
-                    <div className="col-3 ">
+                    <div className="col-12 col-sm-3">
                         <img className="container-shadow-one card-img-top"  src={owner.avatar_url} width="50" alt="..." />
                     </div>
-                    <div className="col-9 d-flex align-items-center">
+                    <div className="col-12 col-sm-9 d-flex align-items-center">
                         <div className="row">
                             <div className="col-3 Top-1">
                                 <small className="text-muted font-1 ">Usuario:    </small> 
