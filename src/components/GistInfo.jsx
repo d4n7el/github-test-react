@@ -17,28 +17,28 @@ const GistInfo = ({ owner, created_at ,login,description ,id, git_pull_url }) =>
                                 <small className="text-muted font-1 ">Usuario:    </small> 
                             </div>
                             <div className="col-9 Top-1">
-                                <strong className="">{login || "*Anonymous*" }</strong>
+                                <strong>{login || "*Anonymous*" }</strong>
                             </div>
 
                             <div className="col-3 Top-1">
                                 <small className="text-muted font-1 ">ID:    </small> 
                             </div>
                             <div className="col-9 Top-1">
-                                <strong className="">{id}</strong>
+                                <strong>{id}</strong>
                             </div>
 
                             <div className="col-3 Top-1">
                                 <small className="text-muted font-1 ">Fecha:    </small> 
                             </div>
                             <div className="col-9 Top-1">
-                                <strong className="">{created_at}</strong>
+                                <strong>{created_at}</strong>
                             </div>
 
                             <div className="col-3 Top-1">
                                 <small className="text-muted font-1 ">Descripción:    </small> 
                             </div>
                             <div className="col-9 Top-1">
-                                <strong className="">{description || "Sin Asignar descripción" }</strong>
+                                <strong>{description || "Sin Asignar descripción" }</strong>
                             </div>
 
                             <div className="col-12">
@@ -46,8 +46,8 @@ const GistInfo = ({ owner, created_at ,login,description ,id, git_pull_url }) =>
                             </div>
                             
                             <div className="col-12 d-flex align-items-start">
-                                <a href={git_pull_url} target="_blank" className="btn container-shadow-one">{ "Visitar Proyecto"}</a>
-                                <a href={"https://gist.github.com/"+login} target="_blank" className="btn container-shadow-one left-1">{ "Visitar Perfil de " + login}</a>
+                                <a href={git_pull_url} target="_blank" rel='noopener noreferrer' className="btn container-shadow-one">{ "Visitar Proyecto"}</a>
+                                <a href={"https://gist.github.com/"+login} target="_blank" rel='noopener noreferrer' className="btn container-shadow-one left-1">{ "Visitar Perfil de " + login}</a>
                                 <Link to="/gists" className="btn container-shadow-one left-1" >Regresar</Link>
                             </div>
                         </div>

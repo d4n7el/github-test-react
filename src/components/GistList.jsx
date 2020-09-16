@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getGist } from  '../utilidades/gist'
 import Target from  './Target'
-import Error from  './Error'
+import Message from  './Message'
 import Button from  './ButtonPag'
 
 const TargetGist = () => {
@@ -47,8 +47,8 @@ const TargetGist = () => {
                 <Button type="btn container-shadow-one" text="Siguiente" clickHandler={nextPage}/>
             </div>
 
-            <Error status={status} statusText={statusText}/>
-        
+            <Message status={status} statusText={statusText}/>
+
             { status >= 200 && status <= 205 && (
                 data.map(({url, id, owner, created_at, description }) => {
                     return  <Target  key={id} id={id} avatar={owner.avatar_url} created_at={created_at} login={owner.login} description={description} />

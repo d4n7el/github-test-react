@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 
-
 const Target = ({ avatar, created_at, description, id, login }) => {
     return (
         <div className="col-12 col-sm-6">

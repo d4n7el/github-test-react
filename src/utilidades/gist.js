@@ -1,8 +1,7 @@
 import Axios from 'axios'
 
-const getGist = async (page = 2, per_page = 20) => {
-    
-    var dataRetorno = {
+const getApi = async (url) => {
+    var returnData = {
         error: true,
         status: 0,
         statusText: "",
@@ -10,56 +9,38 @@ const getGist = async (page = 2, per_page = 20) => {
     };
 
     try{
-        const data = await Axios.get(`//api.github.com/gists?page=${page}&per_page=${per_page}`);
-        dataRetorno.error = (data.status >= 200 && data.status <= 205) ? false : true;
-            
-        dataRetorno.data = data.data;
-        dataRetorno.status = data.status;
-        dataRetorno.statusText = "OK";
+        const data = await Axios.get(url);
+        returnData.error = (data.status >= 200 && data.status <= 205) ? false : true;
+        returnData.statusText = (returnData.error) ? "Ocurrio un problema al realizar el proceso" : "OK";
+        returnData.status = data.status;
+        returnData.data = data.data;
     }catch (error) {
         if (error.response) {
-            dataRetorno.status = 400;
-            dataRetorno.statusText = "Se presento un error al realizar la solictud, verifique su conexion.";
+            returnData.status = 400;
+            returnData.statusText = "Se presento un error al realizar la solictud, verifique su conexion.";
+            console.log("Se presento un error al realizar la solictud, verifique su conexion.",returnData);
         } else if (error.request) {
-            dataRetorno.status = 404;
-            dataRetorno.statusText = "El servidor no responde";
+            returnData.status = 404;
+            returnData.statusText = "El servidor no responde";
+            
         }else {
             console.log('Error', error.message);
         }
     }
-    return dataRetorno;
+
+    return returnData;
+}
+
+const getGist = async (page = 2, per_page = 20) => {
+    var url = `//api.github.com/gists?page=${page}&per_page=${per_page}`;
+    const returnData = await getApi(url);
+    return returnData;
 }
 
 const getGistId = async (id) => {
-    var ruta = `https://api.github.com/gists/${id}`;
-    var dataRetorno = {
-        error: true,
-        status: 0,
-        statusText: "",
-        data: {}
-    };
-
-    try{
-        const data = await Axios.get(ruta);
-        dataRetorno.error = (data.status >= 200 && data.status <= 205) ? false : true;
-
-        dataRetorno.data = data.data;
-        dataRetorno.status = data.status;
-        dataRetorno.statusText = "OK";
-
-    }catch (error) {
-        if (error.response) {
-            dataRetorno.status = 400;
-            dataRetorno.statusText = "Se presento un error al realizar la solictud, verifique su conexion.";
-        } else if (error.request) {
-            dataRetorno.status = 404;
-            dataRetorno.statusText = "El servidor no responde";
-        }else {
-            console.log('Error', error.message);
-        }
-    }
-
-    return dataRetorno;
+    var url = `https://api.github.com/gists/${id}`;
+    const returnData = await getApi(url);
+    return returnData;
 }
 
 export {

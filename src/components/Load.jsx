@@ -1,12 +1,9 @@
 import React from 'react'
 
-const Load = ({message}) => {
+const Load = () => {
     return (
         <div className="d-flex justify-content-center col-12">
-            <div className="spinner-border text-primary " role="status">
-            
-            </div>
-            <span className="text-muted left-2">{ message }</span>
+            <div className="spinner-border text-primary " role="status" />
         </div>
     )
 }

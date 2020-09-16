@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getGistId } from '../utilidades/gist';
 import GistInfo from  './GistInfo'
 import FilesView from  './FilesView'
-import Error from  './Error'
+import Message from  './Message'
 
 const Gist = () => {
 
@@ -29,10 +29,18 @@ const Gist = () => {
     return (
         <div className="col-12">
            
-           <Error status={status} statusText={statusText}/>
+           <Message status={status} statusText={statusText}/>
             
             { status >=  200 && status <= 205 && data != null && (
-                <GistInfo files={data.files} git_pull_url={data.git_pull_url} id={data.id} owner={data.owner} created_at={data.created_at} login={data.owner.login} description={data.description} />
+                <GistInfo
+                    files={data.files} 
+                    git_pull_url={data.git_pull_url}
+                    id={data.id}
+                    owner={data.owner}
+                    created_at={data.created_at}
+                    login={data.owner.login}
+                    description={data.description}
+                />
             )}
 
             <div className="col-12 text-center top-1 title container-shadow-one" >

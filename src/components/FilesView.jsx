@@ -8,8 +8,8 @@ const FilesView = ({ data, login }) => {
             <div className="row">
                 <div className="col-12 d-flex justify-content-center Top-1">
                     <span>
-                        <a className="btn btn-enlace-blue" target="_Blank" href={"https://gist.github.com/"+login}>{login} </a>
-                        / <a className="btn btn-enlace-green" target="_Blank" href={raw_url}>/{ filename || "Sin asignar nombre de archivo"}</a>
+                        <a className="btn btn-enlace-blue" target="_blank" rel='noopener noreferrer' href={"https://gist.github.com/"+login}>{login} </a>
+                        / <a className="btn btn-enlace-green" target="_blank" rel='noopener noreferrer' href={raw_url}>/{ filename || "Sin asignar nombre de archivo"}</a>
                     </span>
                 </div>
             </div>
