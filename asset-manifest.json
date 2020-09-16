@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/github-test-react/static/css/main.12c253eb.chunk.css",
-    "main.js": "/github-test-react/static/js/main.9a3d6b39.chunk.js",
-    "main.js.map": "/github-test-react/static/js/main.9a3d6b39.chunk.js.map",
+    "main.js": "/github-test-react/static/js/main.a856b0be.chunk.js",
+    "main.js.map": "/github-test-react/static/js/main.a856b0be.chunk.js.map",
     "runtime-main.js": "/github-test-react/static/js/runtime-main.38abb8b7.js",
     "runtime-main.js.map": "/github-test-react/static/js/runtime-main.38abb8b7.js.map",
     "static/js/2.3079f3f8.chunk.js": "/github-test-react/static/js/2.3079f3f8.chunk.js",
     "static/js/2.3079f3f8.chunk.js.map": "/github-test-react/static/js/2.3079f3f8.chunk.js.map",
     "index.html": "/github-test-react/index.html",
-    "precache-manifest.e5206defc18fbee7d1fe94823074b833.js": "/github-test-react/precache-manifest.e5206defc18fbee7d1fe94823074b833.js",
+    "precache-manifest.4e9b4757dfdb1a61e16ecc7f80d27e89.js": "/github-test-react/precache-manifest.4e9b4757dfdb1a61e16ecc7f80d27e89.js",
     "service-worker.js": "/github-test-react/service-worker.js",
     "static/css/main.12c253eb.chunk.css.map": "/github-test-react/static/css/main.12c253eb.chunk.css.map",
     "static/js/2.3079f3f8.chunk.js.LICENSE.txt": "/github-test-react/static/js/2.3079f3f8.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.38abb8b7.js",
     "static/js/2.3079f3f8.chunk.js",
     "static/css/main.12c253eb.chunk.css",
-    "static/js/main.9a3d6b39.chunk.js"
+    "static/js/main.a856b0be.chunk.js"
   ]
 }
